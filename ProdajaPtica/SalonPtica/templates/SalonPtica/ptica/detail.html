@@ -15,8 +15,11 @@
         <form action="{% url "KorpaZaKupovinu:DodajUKorpu" ptica.id %}" method="post">
             {{ formazadodavanjepticaukorpu }}
             {% csrf_token %}
+            <br>
             <input type="submit" value="Dodaj u korpu">
         </form>
-        {{ ptica.opis|linebreaks }}
+        <div style="width:50%;margin-left:41.5%;">
+            {{ ptica.opis|linebreaks }}
+        </div>
     </div>
 {% endblock %}

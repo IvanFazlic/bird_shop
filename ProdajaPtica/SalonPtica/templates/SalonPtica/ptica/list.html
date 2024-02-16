@@ -9,10 +9,10 @@
 {% endblock %}
 {% block content %}
     <div id="sidebar">
-        <h3>Segmenti</h3>
+        <h3>Filter</h3>
         <ul>
             <li {% if not segment %}class="selected"{% endif %}>
-                <a href="{% url "SalonPtica:ListaPtica" %}">All</a>
+                <a href="{% url "SalonPtica:ListaPtica" %}">Sve</a>
             </li>
             {% for c in segmenti %}
                 <li {% if segment.slug == c.slug %}class="selected"{% endif %}>
@@ -21,7 +21,7 @@
             {% endfor %}
         </ul>
     </div>
-    <div id="main" class="product-list">
+    <div class="main">
         <h1>
             {% if segment %}
                 {{ segment.naziv }}
@@ -29,15 +29,17 @@
                 Ptice
             {% endif %}
         </h1>
-        {% for ptica in ptice %}
-            <div class="item">
-                <a href="{{ ptica.ApsolutniURL }}">
-                    <img src="{% if ptica.slika %}{{ ptica.slika.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-                </a>
-                <a href="{{ ptica.ApsolutniURL }}">{{ ptica.naziv }}</a>
-                <br>
-                &euro;{{ ptica.cena }}
-            </div>
-        {% endfor %}
+        <div class = "displayGrid">
+            {% for ptica in ptice %}
+                    <div class="item">
+                        <a href="{{ ptica.ApsolutniURL }}">
+                            <img src="{% if ptica.slika %}{{ ptica.slika.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                        </a>
+                        <a href="{{ ptica.ApsolutniURL }}">{{ ptica.naziv }}</a>
+                        <br>
+                        &euro;{{ ptica.cena }}
+                    </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

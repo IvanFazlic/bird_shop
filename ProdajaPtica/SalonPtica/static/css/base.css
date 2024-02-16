@@ -177,24 +177,32 @@ ul.errorlist {
     color:#fff;
 }
 
-#main {
+.main {
     float:left;
     width: 96%;
     margin-right:-220px; 
     overflow:hidden;
 }
-
-.product-list .item {
-    width:25%;
+.displayGrid{
+    display: grid;
+    width: calc(100% - 220px);
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 280px;
+    grid-gap: 20px;
+}
+.displayGrid .item {
+    margin-left: 20px;
+    height: 300px;
+    width:90%;
     padding:10px 20px 10px 0;
-    float:left;
     text-align:center;
     line-height:1.2;
 }
-
-.product-list .item img {
-    width:100%;
-    margin-bottom:8px;
+.displayGrid .item img {
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 .product-detail {
