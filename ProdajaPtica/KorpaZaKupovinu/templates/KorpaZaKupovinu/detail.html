@@ -40,15 +40,15 @@
                                 {% csrf_token %}
                             </form>
                         </td>
-                        <td class="num">${{ stavka.cena }} x {{stavka.kolicina}}</td>
-                        <td class="num">${{ stavka.ukupna_cena }}</td>
+                        <td class="num">{{ stavka.cena }} RSD x {{stavka.kolicina}}</td>
+                        <td class="num">{{ stavka.ukupna_cena }} RSD</td>
                     </tr>
                 {% endwith %}
             {% endfor %}
             <tr class="total">
-                <td>Total</td>
+                <td>Suma</td>
                 <td colspan="4"></td>
-                <td class="num">${{ korpa.UzmiUkupnuCenu }}</td>
+                <td class="num">{{ korpa.UzmiUkupnuCenu }} RSD</td>
             </tr>
         </tbody>
     </table>

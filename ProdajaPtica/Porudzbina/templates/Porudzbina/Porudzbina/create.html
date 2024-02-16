@@ -9,12 +9,12 @@
         <ul>
             {% for stavka in korpa %}
                 <li>
-                    {{ stavka.kolicina }}x {{ stavka.ptica.naziv }}
-                    <span>&euro;{{ stavka.ukupna_cena }}</span>
+                    {{ stavka.kolicina }} x {{ stavka.ptica.naziv }}
+                    <span>{{ stavka.ukupna_cena }} RSD</span>
                 </li>
             {% endfor %}
         </ul>
-        <p>Total: ${{ korpa.UzmiUkupnuCenu }}</p>
+        <p>Suma: {{ korpa.UzmiUkupnuCenu }} RSD</p>
     </div>
     <form method="post" class="order-form">
         {{ forma.as_p }}

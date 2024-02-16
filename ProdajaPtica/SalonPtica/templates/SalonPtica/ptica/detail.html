@@ -10,7 +10,7 @@
         <h2>
             <a href="{{ ptica.segment.ApsolutniURL }}">{{ ptica.segment }}</a>
         </h2>
-        <p class="price">&euro;{{ ptica.cena }}</p>
+        <p class="price">{{ ptica.cena }} RSD</p>
         <!-- dodato za korpu-->
         <form action="{% url "KorpaZaKupovinu:DodajUKorpu" ptica.id %}" method="post">
             {{ formazadodavanjepticaukorpu }}
