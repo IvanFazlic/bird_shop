@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'SalonPtica.apps.SalonpticaConfig'
+    'SalonPtica.apps.SalonpticaConfig',
+    'KorpaZaKupovinu.apps.KorpazakupovinuConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -126,3 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL='/'
 MEDIA_ROOT = os.path.join(BASE_DIR) 
+
+KORPA_ZA_KUPOVINU_SESSION_KEY = 'korpazakupovinusessionkey'
