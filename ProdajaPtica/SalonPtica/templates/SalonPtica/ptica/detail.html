@@ -1,0 +1,19 @@
+{% extends "SalonPtica/base.html" %}
+{% load static %}
+{% block title %}
+    {{ ptica.naziv }}
+{% endblock %}
+{% block content %}
+    <div class="product-detail">
+        <img src="{% if ptica.slika %}{{ ptica.slika.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+        <h1>{{ ptica.naziv }}</h1>
+        <h2>
+            <a href="{{ ptica.segment.ApsolutniURL }}">
+                {{ ptica.segment }}
+            </a>
+        </h2>
+        <p class="price">&euro;{{ ptica.cena }}</p>
+        <!-- ovde ce biti za korpu-->
+        {{ ptica.opis|linebreaks }}
+    </div>
+{% endblock %}
