@@ -22,25 +22,25 @@
                     <tr>
                         <td>
                             <a href="{{ ptica.ApsolutniURL }}">
-                                <img src="{% if ptica.slika %}{{ ptica.slika.url }}{% else %}{% static "img\\no_image.png" %}{% endif %}">
+                                <img style="border-radius:10px;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);" src="{% if ptica.slika %}{{ ptica.slika.url }}{% else %}{% static "img\\no_image.png" %}{% endif %}">
                             </a>
                         </td>
                         <td>{{ ptica.naziv }}</td>
                         <td>
                             <form action="{% url "KorpaZaKupovinu:DodajUKorpu" ptica.id %}" method="post">
-                                <input type="submit" value="Dodaj">
                                 {{ stavka.formazaazuriranjekolicine.kolicina }}
                                 {{ stavka.formazaazuriranjekolicine.dodati_na_kolicinu }}
+                                <input type="submit" style="cursor:pointer;" value="Dodaj">
                                 {% csrf_token %}
                             </form>
                         </td>
                         <td>
                             <form action="{% url "KorpaZaKupovinu:UkloniIzKorpe" ptica.id %}" method="post">
-                                <input type="submit" value="Ukloni">
+                                <input type="submit" style="cursor:pointer;" value="Ukloni">
                                 {% csrf_token %}
                             </form>
                         </td>
-                        <td class="num">${{ stavka.cena }}</td>
+                        <td class="num">${{ stavka.cena }} x {{stavka.kolicina}}</td>
                         <td class="num">${{ stavka.ukupna_cena }}</td>
                     </tr>
                 {% endwith %}
