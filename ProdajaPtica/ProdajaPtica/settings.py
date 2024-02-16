@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'SalonPtica.apps.SalonpticaConfig',
     'KorpaZaKupovinu.apps.KorpazakupovinuConfig',
-
+    'Porudzbina.apps.PorudzbinaConfig',
 ]
 
 MIDDLEWARE = [

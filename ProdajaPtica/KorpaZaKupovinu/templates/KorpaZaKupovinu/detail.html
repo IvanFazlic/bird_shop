@@ -28,9 +28,9 @@
                         <td>{{ ptica.naziv }}</td>
                         <td>
                             <form action="{% url "KorpaZaKupovinu:DodajUKorpu" ptica.id %}" method="post">
+                                <input type="submit" value="Dodaj">
                                 {{ stavka.formazaazuriranjekolicine.kolicina }}
                                 {{ stavka.formazaazuriranjekolicine.dodati_na_kolicinu }}
-                                <input type="submit" value="Azuriraj">
                                 {% csrf_token %}
                             </form>
                         </td>
@@ -54,6 +54,6 @@
     </table>
     <p class="text-right">
         <a href="{% url "SalonPtica:ListaPtica" %}" class="button light">Nastavak kupovine</a>
-        <!-- ovde ce se kasnije dodati link za proveru porudzbine -->
+        <a href="{% url "Porudzbina:KreiranjePorudzbine" %}"class="button">Provera</a>
     </p>
 {% endblock %}
